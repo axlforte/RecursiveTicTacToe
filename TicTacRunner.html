@@ -32,54 +32,63 @@ function start(){
 	sjs.keyDown(Q_KEY, function(){
 		if(CanSel == true){
 			grid[currgrid][0] = active;
+			currgrid = 0;
 		}
 	});
 
 	sjs.keyDown(W_KEY, function(){
 		if(CanSel == true){
 			grid[currgrid][1] = active;
+			currgrid = 1;
 		}
 	});
 
 	sjs.keyDown(E_KEY, function(){
 		if(CanSel == true){
 			grid[currgrid][2] = active;
+			currgrid = 2;
 		}
 	});
 
 	sjs.keyDown(A_KEY, function(){
 		if(CanSel == true){
 			grid[currgrid][3] = active;
+			currgrid = 3;
 		}
 	});
 
 	sjs.keyDown(S_KEY, function(){
 		if(CanSel == true){
 			grid[currgrid][4] = active;
+			currgrid = 4;
 		}
 	});
 
 	sjs.keyDown(D_KEY, function(){
 		if(CanSel == true){
 			grid[currgrid][5] = active;
+			currgrid = 5;
 		}
 	});
 
 	sjs.keyDown(Z_KEY, function(){
 		if(CanSel == true){
 			grid[currgrid][6] = active;
+			currgrid = 6;
 		}
 	});
 
 	sjs.keyDown(X_KEY, function(){
 		if(CanSel == true){
 			grid[currgrid][7] = active;
+			currgrid = 7;
 		}
 	});
 
 	sjs.keyDown(C_KEY, function(){
 		if(CanSel == true){
 			grid[currgrid][8] = active;
+			currgrid = 8;
 		}
 	});
 
@@ -90,6 +99,13 @@ function start(){
 			active = 1;
 		} else {
 			active = 2;
+		}
+
+		if((grid[currgrid][0] == grid[currgrid][4] == grid[currgrid][8]) || (grid[currgrid][2] == grid[currgrid][4] == grid[currgrid][6])){
+			currgrid = currgrid + 1;
+			if(currgrid == 9){
+				currgrid = 0;
+			}
 		}
 	}); //end EventListener function
 
