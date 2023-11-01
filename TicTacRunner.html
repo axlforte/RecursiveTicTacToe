@@ -8,33 +8,89 @@ function start(){
 	var background = new sjs.Image("Images/Tiles/tileset45.png");
 	background.setSize(500, 500);
 
-	var player = new sjs.Image("Images/mogasp1.png");
-	player.type = "player";
-	player.setSize(64,64);
+	var CanSel = false;
+	var active = 1;
+	var currgrid = 4;
+	var grid = [
+		[0,0,0,0,0,0,0,0,0]
+		[0,0,0,0,0,0,0,0,0]
+		[0,0,0,0,0,0,0,0,0]
+		[0,0,0,0,0,0,0,0,0]
+		[0,0,0,0,0,0,0,0,0]
+		[0,0,0,0,0,0,0,0,0]
+		[0,0,0,0,0,0,0,0,0]
+		[0,0,0,0,0,0,0,0,0]
+		[0,0,0,0,0,0,0,0,0]
+		];
+	
+	var bar = new sjs.Image("Images/mogasp1.png");
+	bar.type = "deco";
+	bar.setSize(64,64);
 
 	//sjs.scrollable(player,background);
 
-	var bar = "mogasp3.png";
+	sjs.keyDown(Q_KEY, function(){
+		if(CanSel == true){
+			grid[currgrid][0] = active;
+		}
+	});
 
-	sjs.keyDown(RIGHT_KEY, function(){
-	
-	}); //end Right key
+	sjs.keyDown(W_KEY, function(){
+		if(CanSel == true){
+			grid[currgrid][1] = active;
+		}
+	});
 
-	sjs.keyDown(LEFT_KEY, function(){
+	sjs.keyDown(E_KEY, function(){
+		if(CanSel == true){
+			grid[currgrid][2] = active;
+		}
+	});
 
-	}); //end Left key
+	sjs.keyDown(A_KEY, function(){
+		if(CanSel == true){
+			grid[currgrid][3] = active;
+		}
+	});
 
-	sjs.keyDown(UP_KEY, function(){
+	sjs.keyDown(S_KEY, function(){
+		if(CanSel == true){
+			grid[currgrid][4] = active;
+		}
+	});
 
-	}); //end keyDown function
+	sjs.keyDown(D_KEY, function(){
+		if(CanSel == true){
+			grid[currgrid][5] = active;
+		}
+	});
 
-	sjs.keyDown(SPACE_KEY, function(){
+	sjs.keyDown(Z_KEY, function(){
+		if(CanSel == true){
+			grid[currgrid][6] = active;
+		}
+	});
 
-	}); //end keyDown function SPACE_KEY
+	sjs.keyDown(X_KEY, function(){
+		if(CanSel == true){
+			grid[currgrid][7] = active;
+		}
+	});
+
+	sjs.keyDown(C_KEY, function(){
+		if(CanSel == true){
+			grid[currgrid][8] = active;
+		}
+	});
 
 
 	window.addEventListener("keyup", function(e){
-	
+		CanSel = true;
+		if(active == 2){
+			active = 1;
+		} else {
+			active = 2;
+		}
 	}); //end EventListener function
 
 
