@@ -3,25 +3,14 @@
 <script src="https://simplycodingcourses.com/files/simply.js"async></script>
 <script>
 
-var level = [];
-
 function start(){
-
-	var bgmsize = 512
-	var bgnsize = 480
-
-	sjs.open("target",512,480);
+	sjs.open("target",500,500);
 	var background = new sjs.Image("Images/Tiles/tileset45.png");
-	background.setSize(bgmsize * 1, bgnsize * 1);
+	background.setSize(500, 500);
 
 	var player = new sjs.Image("Images/mogasp1.png");
 	player.type = "player";
 	player.setSize(64,64);
-	player.setGravity(1.5);
-	player.left();
-	player.friction = 0.1;
-	player.noBounds = true;
-	player.offset (100, 131)
 
 	//sjs.scrollable(player,background);
 
@@ -70,6 +59,6 @@ function start(){
 <h1> Platform Game </h1>
 
 
-<div id="target" style="margin:auto;background:#181810;"></div>
+<div id="target" style="margin:auto;background:#dbc7a2;"></div>
 </body>
 </html>
